@@ -6,4 +6,5 @@ const router = Router();
 
 router.post("/", CreateUserService.execute);
 router.post("/login", LoginUserService.execute);
+
 export default router;

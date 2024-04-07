@@ -1,9 +1,9 @@
 import db from "../config/database/prisma";
-import { queryableFields, userInput } from "../types/user";
+import { queryableFields, userType } from "../types/user";
 import CustomError from "../utility/error";
 
 class UserRepository {
-  createUser = async (user: userInput) => {
+  createUser = async (user: userType) => {
     try {
       const existingUser = await db.user.findFirst({
         where: {

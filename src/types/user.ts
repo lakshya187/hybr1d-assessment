@@ -1,9 +1,13 @@
-export type UserType = "BUYER" | "SELLER";
-export type userInput = {
+export type userRole = "BUYER" | "SELLER";
+export type userType = {
   name: string;
   email: string;
   password: string;
-  userType: UserType;
+  userType: userRole;
+  id?: number;
+  createdAt?: Date;
+  updatedAt?: Date;
+  catalogueId?: number;
 };
 
-export type queryableFields = "email" | "id";
+export type queryableFields = "email" | "id" | "catalogueId";
