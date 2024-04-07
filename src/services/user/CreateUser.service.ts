@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import { Service } from "../../interfaces/services";
 import userRepository from "../../repositories/user.repository";
 import { hash } from "bcryptjs";
-import { UserType } from "../../types/user";
+import { userRole } from "../../types/user";
 import CustomError from "../../utility/error";
 import userHelper from "../../helpers/user.helper";
 
@@ -10,7 +10,7 @@ class CreateUserService implements Service {
   execute: RequestHandler = async (req, res, next) => {
     try {
       const { name, email, password, userType } = req.body;
-      const userTypes: UserType[] = ["BUYER", "SELLER"];
+      const userTypes: userRole[] = ["BUYER", "SELLER"];
       if (!userTypes.includes(userType)) {
         throw new CustomError(400, "user type is not valid");
       }
