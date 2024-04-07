@@ -5,3 +5,5 @@ export type userInput = {
   password: string;
   userType: UserType;
 };
+
+export type queryableFields = "email" | "id";
