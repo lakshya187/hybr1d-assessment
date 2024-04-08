@@ -24,10 +24,9 @@ Code Structure
 
 How to run project?
 
-1. Clone the repository - $ git clone git@github.com:lakshya187/hybr1d-assessment.git
-2. Install the dependencies - $ npm i
-3. run locally -$ npm run dev
-4. build - $ npm run build
-5. run on production - $ npm run start
+1. Install the dependencies - $ npm i
+2. run locally -$ npm run dev
+3. build - $ npm run build
+4. run on production - $ npm run start
 
 \*Note - api_postman_collection.json contains all the apis endpoints
