@@ -25,8 +25,9 @@ Code Structure
 How to run project?
 
 1. Install the dependencies - $ npm i
-2. run locally -$ npm run dev
-3. build - $ npm run build
+2. build - $ npm run build
+3. run locally -$ npm run dev
 4. run on production - $ npm run start
 
 \*Note - api_postman_collection.json contains all the apis endpoints
+\*Note - Find the env file in the email.
