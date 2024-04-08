@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "7bbab837-584c-458c-bf2c-9c086f637ce9",
+		"name": "hybr1d_assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20087780",
+		"_collection_link": "https://grey-zodiac-828495.postman.co/workspace/My-Captain~6c526ceb-0565-4858-82b9-1b650d8b0ca1/collection/20087780-7bbab837-584c-458c-bf2c-9c086f637ce9?action=share&source=collection_link&creator=20087780"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"seller2@gmail.com\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/login",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"test\",\n    \"email\": \"seller4@gmail.com\",\n    \"password\": \"1234\",\n    \"userType\": \"SELLER\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/signup",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Catalogue",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"products\" : [{\"name\": \"test1\", \"price\" : 100}, {\"name\":\"test2\", \"price\": 50}],\n    \"sellerId\": 6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/seller/create-catalog",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"seller",
+						"create-catalog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all sellers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"products\" : [{\"name\": \"test1\", \"price\" : 100}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/buyer/list-of-sellers",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"buyer",
+						"list-of-sellers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get products of a user's catalogue",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/buyer/seller-catalog/5",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"buyer",
+						"seller-catalog",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"productIds\": [2,3],\n    \"buyerId\" : 2,\n    \"sellerId\" : 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/buyer/create-order/5",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"buyer",
+						"create-order",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{jwt}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/user/seller/5",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"user",
+						"seller",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
