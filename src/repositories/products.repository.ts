@@ -35,5 +35,19 @@ class ProductRepository {
       throw e;
     }
   };
+  findMultipleProducts = async (productIds: number[]) => {
+    try {
+      const products = await db.product.findMany({
+        where: {
+          id: {
+            in: productIds,
+          },
+        },
+      });
+      return products;
+    } catch (e) {
+      throw e;
+    }
+  };
 }
 export default new ProductRepository();

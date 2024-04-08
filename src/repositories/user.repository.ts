@@ -23,7 +23,7 @@ class UserRepository {
   };
   findUserWithParam = async (
     queryField: userQueryableFields,
-    queryValue: string
+    queryValue: string | number
   ) => {
     try {
       const user = await db.user.findFirst({
@@ -46,6 +46,27 @@ class UserRepository {
           [queryField]: queryValue,
         },
       });
+    } catch (e) {
+      throw e;
+    }
+  };
+  findUserSellerOrdersWithProducts = async (userId: number) => {
+    try {
+      const user = await db.user.findUnique({
+        where: { id: userId },
+        include: {
+          ordersAsSeller: {
+            include: {
+              OrderProducts: {
+                include: {
+                  product: true,
+                },
+              },
+            },
+          },
+        },
+      });
+      return user?.ordersAsSeller;
     } catch (e) {
       throw e;
     }

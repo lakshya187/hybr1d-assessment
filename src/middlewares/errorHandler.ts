@@ -18,8 +18,6 @@ const ErrorHandler = (
       message: error.message,
     });
   }
-  // check for 500 error
-  console.error(error.stack);
   return res.status(500).json({
     success: false,
     message: "INTERNAL SERVER ERROR",

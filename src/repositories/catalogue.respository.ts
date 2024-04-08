@@ -1,7 +1,5 @@
-import { Catalogue, Product, User } from "@prisma/client";
+import { Catalogue, User } from "@prisma/client";
 import db from "../config/database/prisma";
-import { product } from "../types/products";
-import { userType } from "../types/user";
 import CustomError from "../utility/error";
 // import { UserCreateOneWithoutCatalogueInput } from "@prisma/client";
 

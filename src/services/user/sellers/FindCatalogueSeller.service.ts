@@ -18,5 +18,4 @@ class FindCatalogueSellerService implements Service {
     }
   };
 }
-
 export default new FindCatalogueSellerService();

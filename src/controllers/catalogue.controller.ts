@@ -1,8 +1,8 @@
-import { Router } from "express";
-import CreateCatalogueService from "../services/catalogue/CreateCatalogue.service";
+// import { Router } from "express";
+// import CreateCatalogueService from "../services/catalogue/CreateCatalogue.service";
 
-const router = Router();
+// const router = Router();
 
-router.post("/", CreateCatalogueService.execute);
+// router.post("/", CreateCatalogueService.execute);
 
-export default router;
+// export default router;
