@@ -1,4 +1,1 @@
-export type product = {
-  price: number;
-  name: string;
-};
+export type productQueryAbleFields = "catalogueId" | "id";

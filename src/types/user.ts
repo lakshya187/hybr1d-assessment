@@ -10,4 +10,4 @@ export type userType = {
   catalogueId?: number;
 };
 
-export type queryableFields = "email" | "id" | "catalogueId";
+export type userQueryableFields = "email" | "id" | "catalogueId" | "userType";
